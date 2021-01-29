@@ -1,5 +1,6 @@
 <?php
 $paragrafo = 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis nihil iusto delectus, et animi exercitationem expedita facilis nam commodi minus, porro quisquam veritatis molestiae quae eaque. Sint similique quaerat eligendi.';
+$nuovo_paragrafo = str_replace($_GET["badword"], "***", $paragrafo);
 ?>
 
 <!DOCTYPE html>
@@ -10,13 +11,12 @@ $paragrafo = 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis
     <title>Document</title>
 </head>
 <body>
-    <h1>
-        <?php echo $paragrafo;
-        echo ' ';
-        echo 'lunghezza: ' . strlen($paragrafo) ;
-        echo $_GET["punto"]; ?>
-    </h1>
-    <a href="http://localhost/php-badwords?punto=***">punti</a>
+    <p>
+        <?php echo $paragrafo . ' ' . 'lunghezza: ' . strlen($paragrafo); ?>
+    </p>
+    <p>
+        <?php echo $nuovo_paragrafo . ' ' . 'lunghezza: ' . strlen($nuovo_paragrafo); ?>
+    </p>
 </body>
 </html>
 <!-- Creare una variabile con un paragrafo di testo.
